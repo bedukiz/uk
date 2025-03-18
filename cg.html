@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOB</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #1a1a1a;
+            color: #fff;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        .navigation {
+            width: 175px;
+            background-color: #282828;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            overflow-y: auto;
+            padding-top: 60px;
+        }
+        .navigation ul {
+            list-style: none;
+            padding-left: 20px;
+        }  
+        .navigation ul li {
+            margin-bottom: 10px;
+        }
+        .navigation ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2em;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .navigation ul li a:hover {
+            background-color: #333;
+        }
+        .main-content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+        .main-content h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .main-content p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+        .footer {
+            background-color: #282828;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        </style>
+</head>
+<body>
+    <nav class="navigation">
+        <ul>
+            <li><a href="#prac1">Practical 1</a></li>
+            <li><a href="#prac2">Practical 2</a></li>
+            <li><a href="#prac3">Practical 3</a></li>
+            <li><a href="#prac4">Practical 4</a></li>
+            <li><a href="#prac5">Practical 5</a></li>
+            <li><a href="#prac6">Practical 6</a></li>
+            <li><a href="#prac7">Practical 7</a></li>
+            <li><a href="#prac8">Practical 8</a></li>
+            <li><a href="#prac9">Practical 9</a></li>
+        </ul>
+    </nav>
+    <main class="main-content">
+        <section id="prac1">
+            <h2>Computer Graphics</h2>
+            <p><pre>
+
+<h3>1.1</h3>
+#include< stdio.h>
+#include< conio.h>
+#include< graphics.h>
+void main(){
+    int gd = DETECT, gm;
+    int x = 250;
+    int y = 250;
+    int start_angle = 155;
+    int end_angle = 300;
+    int radius = 100;
+    initgraph(&gd, &gm, "C:\\TURBOC3\\BGI");
+    arc(x, y, start_angle, end_angle, radius);
+    getch();
+    closegraph();
+}
+
+
+<h3>1.2</h3>
+#include< stdio.h>
+#include< conio.h>
+#include< graphics.h>
+void main(){
+    int gd = DETECT, gm;
+    initgraph(&gd, &gm, "C:\\TURBOOC3\\BGI");
+    setcolor(RED);
+    rectangle(200, 200, 300, 300);
+    circle(100, 100, 40);
+    outtextxy(50, 50, "This is text");
+    line(100, 100, 200, 200);
+    arc(100, 100, 0, 135, 50);
+    getch();
+    closegraph();
+}
+
+
+<h3>1.3</h3>
+#include< stdio.h>
+#include< conio.h>
+#include< graphics.h>
+void main(){
+    int gd = DETECT, gm, midx, midy;
+    initgraph(&gd, &gm, "C:\\TURBOC3\\BGI");
+    cleardevice();
+    midx = getmaxx()/2;
+    midy = getmaxy()/2;
+    line(1, midy, 640, midy);
+    line(midx, 1, midx, 480);
+    getch();
+    closegraph();
+}
+</pre></p></section>
+<section id="prac2"><p><pre>
+<h3>2.1 four screens with four objects</h3>
+#include< stdio.h>
+#include< graphics.h>
+#include< conio.h>
+void main(){
+        int gd = DETECT, gm;
+        int midx, midy;
+        initgraph(&gd, &gm, "C:\\TURBOC3\\BGI");
+        setcolor(RED);
+        midx = getmaxx()/2;
+        midy = getmaxy()/2;
+        line(1, midy, 640, midy);
+        line(midx, 1, midx, 480);
+        circle(170, 125, 100);
+        outtextxy(170, 125, 100);
+        rectangle(58, 251, 304, 392);
+        outtextxy(160, 300, "Rectangle");
+        arc(500, 180, 45, 135, 170);
+        outtextxy(500, 180, "Half circle");
+        ellipse(500, 300, 0, 360, 75, 25);
+        outtextxy(500, 300, "Ellipse");
+        getch();
+        closegraph();
+}
+
+<h3>2.2 simple house</h3>
+#include< graphics.h>
+#include< conio.h>
+void main(){
+        int gd =  DETECT, gm;
+        initgraph(&gd, &gm, "C:\\TURBOC3\\BGI");
+        line(150, 150, 200, 200);
+        line(100, 200, 200, 200);
+        line(150, 150, 100, 200);
+        line(100, 200, 100, 390);
+        line(150, 150, 360, 150);
+        line(360, 150, 400, 200);
+        line(200, 200, 400, 200);
+        line(200, 200, 200, 390);
+        line(400, 200, 400, 390);
+        line(100, 390, 400, 390);
+        line(120, 300, 120, 390);
+        line(120, 300, 180, 300);
+        line(180, 300, 180, 390);
+        circle(150, 180, 10);
+        line(250, 270, 250, 320);
+        line(250, 270, 335, 270);
+        line(335, 270, 335, 320);
+        line(250, 320, 335, 320);
+        outtextxy(120, 250, "Om");
+        getch();
+        closegraph();
+}
+</pre></p></section>
+<section id="prac3"><p><pre>
+<h3>3.1 circle</h3>
+#include< stdio.h>
+#include< conio.h>
+#include< graphics.h>
+void main(){
+        int gd = DETECT, gm;
+        int x, y, radius = 80;
+        initgraph(&gd, &gm, "C:\\TURBOC3\\BGI");
+        x = getmaxx()/2;
+        y = getmaxy()/2;
+        outtextxy(x-100, 50, "Circle ousing graphics in C");
+        circle(x, y, radius);
+        getch();
+        closegraph();
+}
+
+<h3>3.2 rectangle</h3>
+#include< stdio.h>
+#include< conio.h>
+#include< graphics.h>
+void main(){
+        int gd = DETECT, gm;
+        int x, y, radius = 80;
+        initgraph(&gd, &gm, "C:\\TURBOC3\\BGI");
+        x = getmaxx()/2;
+        y = getmaxy()/2;
+        outtextxy(x-100, 50, "Rectangle using graphics in C");
+        rectangle(150, 150, 400, 150);
+        getch();
+        closegraph();
+}
+
+
+<h3>3.3 square</h3>
+#include< stdio.h>
+#include< conio.h>
+#include< graphics.h>
+void main(){
+        int gd = DETECT, gm;
+        int x, y, radius = 80;
+        initgraph(&gd, &gm, "C:\\TURBOC3\\BGI");
+        line(300, 260, 340, 260);
+        line(300, 260, 300, 220);
+        line(300, 220, 340, 220);
+        line(340, 220, 340, 260);
+        outtextxy(240, 50, "Square using graphics in c");
+        getch();
+        closegraph();
+}
+
+
+<h3>3.4 concentric circle</h3>
+#include< stdio.h>
+#include< conio.h>
+#include< graphics.h>
+void main(){
+        int gd = DETECT, gm;
+        int x, y, radius = 80;
+        initgraph(&gd, &gm, "C:\\TURBOC3\\BGI");
+        x = getmaxx()/2;
+        y = getmaxy()/2;
+        outtextxy(240, 50, "Concentric cirle using graphics in C");
+        circle(x, y, 100);
+        circle(x, y, 80);
+        circle(x, y, 60);
+        circle(x, y, 40);
+        circle(x, y, 20);
+        getch();
+        closegraph();
+}
+
+
+<h3>3.5 ellipse</h3>
+#include< stdio.h>
+#include< conio.h>
+#include< graphics.h>
+void main(){
+        int gd = DETECT, gm;
+        int x, y, radius = 80;
+        initgraph(&gd, &gm, "C:\\TURBOC3\\BGI");
+        x = getmaxx()/2;
+        y = getmaxy()/2;
+        outtextxy(240, 50, "Ellipse using graphics in C");
+        ellipse(x, y, 0, 360, 120, 60 );
+        getch();
+        closegraph();
+}
+</pre></p></section>
+<section id="prac4"><p><pre>
+<h3>4.1 DDA </h3>
+#include< graphics.h>
+#include< stdio.h>
+#include< conio.h>
+#include< math.h>
+#include< dos.h>
+void main()
+{
+    float x,y,dx,dy,step,x1,y1,x2,y2;
+    int i,gd=DETECT,gm;
+    initgraph(&gd,&gm,"C:\\TURBOC3\\BGI");
+    printf("Enter the value of x1 and y1: ");
+    scanf("%f%f",&x1,&y1);
+    printf("Enter the value of x2 and y2: ");
+    scanf("%f%f",&x2,&y2);
+    dy=abs(y2-y1);
+    dx=abs(x2-x1);
+    if(dx>=dy)
+    {
+    step=dx;
+    }
+    else
+    {
+    step=dy;
+    }
+    dx=dx/step;
+    dy=dy/step;
+    x=x1;
+    y=y1;
+    i=1;
+    while(i<=step)
+    {
+    putpixel(x,y,5);
+    x=x+dx;
+    y=y+dy;
+    i=i+1;
+    delay(50);
+    }
+    getch();
+    closegraph();
+}
+
+
+<h3>4.2 Bresenhams line drawing algo</h3>
+#include< stdio.h>
+#include< conio.h>
+#include< graphics.h>
+void drawline(int x1,int y1,int x2,int y2)
+{
+    int x,y,p,dx,dy;
+    dx=x2-x1;
+    dy=y2-y1;
+    x=x1;
+    y=y1;
+    p=2*dy-dy;
+    while(x<x2)
+    {
+    if(p>=0)
+    {
+    putpixel(x,y,7);
+    y=y+1;
+    p=p+2*dy-2*dx;
+    }
+    else
+    {
+    putpixel(x,y,7);
+    p=p+2*dy;
+    }
+    x=x+1;
+    }
+}
+void main()
+{
+    int gd=DETECT,gm,error,x1,x2,y1,y2;
+    initgraph(&gd,&gm,"C:\\TURBOC3\\BGI");
+    printf("Enter the value of x1 and y1: ");
+    scanf("%d%d",&x1,&y1);
+    printf("Enter the value of x2 and y2: ");
+    scanf("%d%d",&x2,&y2);
+    drawline(100,200,300,400);
+    getch();
+    closegraph();
+}
+</pre></p></section>
+<section id="prac5"><p><pre>
+<h3>5.1 midpoint circle</h3>
+#include< stdio.h>
+#include< conio.h>
+#include< dos.h>
+#include< graphics.h>
+void drawcircle(int x1,int y1,int r)
+{
+    int x=r;
+    int y=0;
+    int p;
+    while(x>=y)
+    {
+    putpixel(x1+x,y1+y,7);
+    putpixel(x1+y,y1+x,7);
+    putpixel(x1-y,y1+x,7);
+    putpixel(x1-x,y1+y,7);
+    putpixel(x1-x,y1-y,7);
+    putpixel(x1-y,y1-x,7);
+    putpixel(x1+y,y1-x,7);
+    putpixel(x1+x,y1-y,7);
+    if(p<=0)
+    {
+    y=y+1;
+    p=p+2*y+1;
+    }
+    else
+    {
+    x=x-1;
+    p=p-2*x+1;
+    }
+    delay(50);
+    }
+}
+void main()
+{
+    int gd=DETECT,gm,x1,y1,r;
+    initgraph(&gd,&gm,"C:\\TURBOC3\\BGI");
+    printf("Enter the value of r ");
+    scanf("%d",&r);
+    printf("Enter the value of x2 and y2: ");
+    scanf("%d%d",&x1,&y1);
+    drawcircle(x1,y1,r);
+    getch();
+    closegraph();
+}
+
+<h3>5.2 midpoint ellipse</h3>
+    
+</pre></p></section>
+<section id="prac6"><p><pre>
+<h3>6.1 2d scaling</h3>
+#include< stdio.h>
+#include< conio.h>
+#include< graphics.h>
+#include< math.h>
+void main()
+{
+    int gd=DETECT,gm,error,x1,x2,y1,y2,sx,sy,x3,x4,y3,y4;
+    initgraph(&gd,&gm,"C:\\TURBOC3\\BGI");
+    printf("Enter the 2 lines end points : ");
+    scanf("%d%d%d%d",&x1,&y1,&x2,&y2);
+    line(x1,y1,x2,y2);
+    printf("Enter the value of sx and sy: ");
+    scanf("%d%d",&sx,&sy);
+    x3=x1*sx;
+    x4=x2*sx;
+    y3=y1*sy;
+    y4=y2*sy;
+    printf("line after scaling:  ");
+    line(x3,y3,x4,y4);
+    getch();
+    closegraph();
+}
+    
+
+<h3>6.2 2d translation</h3>
+#include< stdio.h>
+#include< conio.h>
+#include< graphics.h>
+#include< math.h>
+void main()
+{
+    int gd=DETECT,gm,error,x1,x2,y1,y2,tx,ty,x3,x4,y3,y4;
+    initgraph(&gd,&gm,"C:\\TURBOC3\\BGI");
+    printf("Enter the 2 end points: ");
+    scanf("%d%d%d%d",&x1,&y1,&x2,&y2);
+    line(x1,y1,x2,y2);
+    printf("Enter the translation vector co-ordinates: ");
+    scanf("%d%d",&tx,&ty);
+    x3=x1+tx;
+    x4=x2+tx;
+    y3=y1+ty;
+    y4=y2+ty;
+    printf("line after translation :    ");
+    line(x3,y3,x4,y4);
+    getch();
+    closegraph();
+}
+</pre></p></section>
+<section id="prac7"><p><pre>
+
+<h3>7.1 2d rotation</h3>
+#include< stdio.h>
+#include< conio.h>
+#include< graphics.h>
+#include< stdlib.h>
+#include< math.h>
+void main()
+{
+    int gd=DETECT,gm,error,x1,x2,y1,y2,xn,yn;
+    double r11,r12,r21,r22,th;
+    initgraph(&gd,&gm,"C:\\TURBOC3\\BGI");
+    printf("Enter the 2 line end points : ");
+    scanf("%d%d%d%d",&x1,&y1,&x2,&y2);
+    line(x1,y1,x2,y2);
+    printf("Enter the value of angle : ");
+    scanf("%d",&th);
+    r11=cos(th*3.14/180);
+    r12=sin(th*3.14/180);
+    r21=-sin(th*3.14/180);
+    r22=cos(th*3.14/180);
+    xn=((r11*x2)-(r12*y2));
+    yn=((r21*x2)-(r22*y2));
+    line(x1,y1,xn,yn);
+    getch();
+    closegraph();
+}
+   
+
+<h3>7.2 smile face</h3>
+#include< stdio.h>
+#include< conio.h>
+#include< graphics.h>
+void main(){
+        int gd = DETECT, gm;
+        int x, y, radius = 80;
+        initgraph(&gd, &gm, "C:\\TURBOC3\\BGI");
+        circle(200, 200, 50);
+        circle(190, 190, 5);
+        circle(210, 190, 5);
+        arc(190, 190, 50, 130, 10);
+        arc(210, 190, 50, 130, 10);
+        arc(200, 210, 180, 360, 10);
+        line(187, 210, 193, 210);
+        line(207, 210, 213, 210);
+        line(198, 195, 195, 200);
+        line(202, 195, 205, 200);
+        line(195, 200, 200, 205);
+        line(205, 200, 200, 205);
+        getch();
+        closegraph();
+}
+</pre></p></section>
+<section id="prac8"><p><pre>
+<h3>8.1 text screen saver</h3>
+#include<stdio.h>
+#include<conio.h>
+#include<graphics.h>
+#include<dos.h>
+void main()
+{
+    int gd=DETECT,gm,i,maxx,maxy;
+    initgraph(&gd,&gm,"C:\\TURBOC3\\BGI");
+    maxx=getmaxx();
+    maxy=getmaxy();
+    while(!kbhit())
+    {
+    for(i = 0; i < maxy; i++)
+    {
+    cleardevice();
+    settextstyle(2,0,5);
+    outtextxy(maxx/2,i,"Good luck");
+    delay(50);
+    }
+    }
+    getch();
+    closegraph();
+}
+
+
+<h3>8.2 moving car</h3>
+#include< stdio.h>
+#include< conio.h>
+#include< graphics.h>
+void main()
+{
+    int i,j;
+    int gd=DETECT,gm;
+    initgraph(&gd,&gm,"C:\\TURBOC3\\BGI");
+    settextstyle(DEFAULT_FONT,HORIZ_DIR,2);
+    outtextxy(25,240,"press any key to see moving car");
+    getch();
+    setviewport(0,0,639,440,1);
+    for(i=0;i<=420;i=i+10,j++)
+    {
+    rectangle(50+i,275,150+i,400);
+    rectangle(150+i,350,200+i,400);
+    circle(75+i,410,10);
+    circle(175+i,410,10);
+    setcolor(j);
+    delay(50);
+    if(i==420)
+    break;
+    clearviewport();
+    }
+     getch();
+    closegraph();
+    
+}
+</pre></p></section>
+<section id="prac9"><p><pre>
+<h3>9.1 floodfill algo</h3>
+#include< conio.h>
+#include< dos.h>
+#include< graphics.h>
+#include< stdio.h>
+void floodFill(int x,int y,int oc,int nc)
+{
+    if(getpixel(x,y)==oc )
+    {
+    delay(20);
+    putpixel(x,y,nc);
+    floodFill(x+1,y,oc,nc);
+    floodFill(x,y+1,oc,nc);
+    floodFill(x-1,y,oc,nc);
+    floodFill(x,y-1,oc,nc);
+    }
+}
+void main()
+{
+    int gm,gd=DETECT,r;
+    int x,y;
+    printf("enter x and y position of circle: ");
+    scanf("%d%d",&x,&y);
+    printf("enter r: ");
+    scanf("%d",&r);
+    initgraph(&gd,&gm,"C:\\TURBOC3\\BGI");
+    circle(x,y,r);
+    floodFill(x,y,0,15);
+    delay(50);
+    getch();
+    closegraph();
+}
+
+
+<h3>9.2 boundfill algo</h3>
+#include< stdio.h>
+#include< conio.h>
+#include< dos.h>
+#include< graphics.h>
+#include< stdio.h>
+void boundaryfill(int x,int y,int fc,int bc)
+{
+    if(getpixel(x,y)!=bc && getpixel(x,y)!=fc )
+    {
+    putpixel(x,y,fc);
+    boundaryfill(x+1,y,fc,bc);
+    boundaryfill(x,y+1,fc,bc);
+    boundaryfill(x-1,y,fc,bc);
+    boundaryfill(x,y-1,fc,bc);
+    }
+}
+int main()
+{
+    int gm,gd=DETECT,r;
+    int x,y;
+    printf("enter x and y positio for circle: ");
+    scanf("%d%d",&x,&y);
+    printf("enter r: ");
+    scanf("%d",&r);
+    initgraph(&gd,&gm,"C:\\TURBOC3\\BGI");
+    circle(x,y,r);
+    boundaryfill(x,y,4,15);
+    delay(50);
+    getch();
+    closegraph();
+    return 0;
+}
+
+            </pre></p>
+        </section>
+    </main>
+    <footer class="footer">
+        <p style="align-content: center;">&copy; 2025 pishvi corp.</p>
+    </footer>
+</body>
+</html>
