@@ -420,7 +420,72 @@ void main()
 }
 
 <h3>5.2 midpoint ellipse</h3>
-    
+#include< stdio.h>
+#include< graphics.h>
+void main()
+{
+    long x,y,x_center,y_center;
+    long a_sqr,b_sqr,fx,fy,d,a,b,tmp1,tmp2;
+    int g_driver=DETECT,g_mode;
+    clrscr();
+    initgraph(&g_driver,&g_mode,”C:\\TURBOC3\\BGI”);
+    printf(“MID POINT ELLIPSE”);
+    printf(“\n\n ENTER COORDINATE X AND Y”);
+    scanf(“%d%d”,&x_center,&y_center);
+    printf(“\n enter constants a and b”);
+    scanf(“%d%d”,&a,&b);
+    x=0;
+    y=b;
+    a_sqr=a*a;
+    b_sqr=b*b;
+    fc=2*b_sqr*x;
+    fy=2*a_sqr*y;
+    d=b_sqr-(a_sqr*b)+(a_sqr*0.25);
+    do
+    {
+    putpixel(x_center+x,y_center+y,1);
+    putpixel(x_center-x,y_center-y,1);
+    putpixel(x_center+x,y_center-y,1);
+    putpixel(x_center-x,y_center+y,1);
+    if(d<0)
+    {
+    d=d+fx+b_sqr;
+    }
+    else
+    {
+    y=y-1;
+    d=d+fx+-fy+b_sqr;
+    fy=fy-(2*a_sqr);
+    }
+    x=x+1;
+    fx=fx+(2*b_sqr);
+    delay(10);
+    }
+    while(fx=0)
+    {
+    d=d-fx+a_sqr;
+    }
+    else
+    {
+    x=x+1;
+    d=d+fx-fy+a_sqr;
+    fx=fx-(2*b_sqr);
+    }
+    {
+    x=x+1;
+    d=d+fx-fy+a_sqr;
+    fx=fx+(2*b_sqr);
+    }
+    y=y-1;
+    fy=fy-(2*a_sqr);
+    }
+    while(y>0);
+    getch();
+    closegraph();
+}
+
+
+        
 </pre></p></section>
 <section id="prac6"><p><pre>
 <h3>6.1 2d scaling</h3>
